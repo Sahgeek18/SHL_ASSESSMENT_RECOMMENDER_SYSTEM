@@ -63,12 +63,12 @@ URL: {row['URL']}
 
         # System prompt
         system_prompt = f"""
-You are a helpful AI assistant. From the below context, recommend the top 10 relevant individual assessments in *Markdown table* format. Each row should include:
-- *Name* (as a [clickable link](URL)),
-- *Remote Testing* (Yes/No),
-- *Adaptive/IRT* (Yes/No),
-- *Completion Time*,
-- *Test Types*.
+You are a helpful assistant. From the below context, recommend the top 10 relevant individual assessments in Markdown table format. Each row should include:
+- Name (as a [clickable link](URL)),
+- Remote Testing (Yes/No),
+- Adaptive/IRT (Yes/No),
+- Completion Time,
+- Test Types.
 
 Only use the provided context. Do not hallucinate. If unsure, say you don't know.
 
@@ -81,5 +81,8 @@ Context:
             HumanMessage(content=query)
         ])
 
+        # Display the results
         st.markdown("### 🧠 Recommended Assessments")
+        
+        # Display response as markdown
         st.markdown(response.content)
