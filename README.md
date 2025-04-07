@@ -16,10 +16,14 @@ This repositroy contains a working streamlit application and a jupyter notebook 
 
 
 **🛠️ Technologies Used**
-Python
-Streamlit
-SentenceTransformers (Hugging Face)
-FAISS
+Python  
+
+Streamlit  
+
+SentenceTransformers (Hugging Face)  
+
+FAISS  
+
 LLaMA3 via Ollama
 
 LangChain (optional)
