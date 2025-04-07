@@ -1,39 +1,38 @@
-langchain
-python-dotenv
-ipykernel
-langchain_community
-unstructured 
-langchain_ollama
-faiss_cpu
-python-dotenv
+# Core libraries
 streamlit
-langchain
-faiss-cpu
-sentence-transformers
-langchain-community
-langchain-ollama
-tabulate
 pandas
-streamlit==1.33.0
-pandas==2.2.2
-requests==2.31.0
-beautifulsoup4==4.12.3
+requests
+beautifulsoup4
+tabulate
 
 # LangChain ecosystem
-langchain==0.1.16
-langchain-community==0.0.33
-langchain-core>=0.1.43,<0.2.0
+langchain
+langchain-community
+langchain-core
+langchain-text-splitters
 
-# Sentence Transformers
-sentence-transformers==2.7.0
-
-# HuggingFace and dependencies
-transformers==4.36.2
-accelerate==0.25.0
-torch==2.2.1  # Make sure this matches your system's CUDA/CPU config
+# Embedding models
+sentence-transformers
+transformers
+accelerate
+torch
 
 # FAISS for vector storage
-faiss-cpu==1.7.4  # Use faiss-gpu if you want GPU acceleration
+faiss-cpu
 
-# Ollama placeholder (you said you'll switch to cloud so you may skip)
-# langchain-ollama==0.0.6
+# Google Gemini API
+google-generativeai
+
+# Optional: document parsing
+unstructured
+
+# Optional: local model support
+langchain-ollama
+
+# For compatibility with Keras used in transformers
+tensorflow
+tf-keras
+
+# Runtime/dev tools
+ipykernel
+python-dotenv
