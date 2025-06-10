@@ -1,29 +1,60 @@
-**SHL Test Assessment Recommender**
+# 🚀 SHL Test Assessment Recommender
 
-This Streamlit app uses a **Retrieval-Augmented Generation (RAG)** pipeline to recommend relevant SHL test solutions based on a natural language query or job description. It leverages Hugging Face embeddings for document retrieval and **LLaMA3** (via Ollama) for answer generation.  
+This Streamlit application uses a **Retrieval-Augmented Generation (RAG)** pipeline to recommend relevant SHL individual test solutions based on a user's natural language query or job description. It combines **Hugging Face embeddings**, **FAISS indexing**, and **Google’s Gemini 1.5 Flash** for efficient retrieval and intelligent response generation.
 
-This repositroy contains a working streamlit application and a jupyter notebook on google colab along with the scraped data set and required libraries.
+The repository includes:
+- ✅ A working **Streamlit app**
+- 📒 A **Jupyter Notebook** for experimentation in **Google Colab**
+- 📂 A scraped **dataset** of SHL assessments
+- 📦 Required libraries listed for setup
 
+---
 
-**🚀 Features**
-🧾 Upload or search a job description or question
+## 🚀 Features
 
-🔍 Semantic search using Hugging Face embeddings
+- 🧾 Accepts natural language input (job description or requirement)
+- 🔍 Uses **SentenceTransformer** + **FAISS** for semantic vector search
+- 🧠 Uses **Gemini 1.5 Flash** for natural language response generation
+- 📊 Displays top **10 recommended SHL assessments** in a **Markdown table**
+- ⚡ Fast and efficient due to on-the-fly chunking and caching
 
-🧠 Answer generation using LLaMA3
+---
 
-🌐 Built with Streamlit for interactive web interface
+## 🔧 Tech Stack
 
+- **Frontend**: [Streamlit](https://streamlit.io)
+- **Embeddings**: [`all-MiniLM-L6-v2`](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) from Hugging Face
+- **Indexing**: [FAISS](https://github.com/facebookresearch/faiss)
+- **Text Splitting**: `RecursiveCharacterTextSplitter` from LangChain
+- **LLM**: [Gemini 1.5 Flash](https://ai.google.dev/)
+- **Data**: `SHL_Scraped_Data1.csv`
 
-**🛠️ Technologies Used**
-Python  
+---
 
-Streamlit  
+## ✅ Example Query
 
-SentenceTransformers (Hugging Face)  
+> `"Test for entry-level role in sales"`
 
-FAISS  
+The app returns a **Markdown-formatted table** with the most suitable assessments including:
 
-LLaMA3 via Ollama
+- 📝 Name (clickable link)
+- 🧪 Test Types
+- ⏱ Completion Time
+- ✅ Remote Testing support
+- 🧠 Adaptive/IRT status
 
-LangChain (optional)
+---
+
+## 📦 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/shl-test-recommender.git
+cd shl-test-recommender
+
+# Create virtual environment (optional but recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
